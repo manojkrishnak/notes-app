@@ -1,0 +1,32 @@
+.container {
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.page {
+  padding: 2rem;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: rgb(172, 170, 170);
+}
+
+.create-notes-btn {
+  background-color: #3f6a8f;
+  border: 0;
+  padding: 0.4rem;
+  color: #fff;
+  border-radius: 4px;
+  width: 8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Card */
+
+.card {
+}

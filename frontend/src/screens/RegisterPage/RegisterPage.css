@@ -1,0 +1,43 @@
+.label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #302d2d;
+}
+
+#name,
+#email,
+#password,
+#confirm-password {
+  width: 30%;
+  padding: 0.3rem;
+}
+
+input {
+  outline-color: rgb(123, 120, 120);
+  margin-bottom: 0.5rem;
+}
+
+.register-form {
+  padding: 1rem 0;
+}
+
+.submit-btn {
+  display: block;
+  background-color: #b9841b;
+  border: 0;
+  padding: 0.5rem;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #e39c0e;
+}
+
+.required {
+  color: red;
+}
