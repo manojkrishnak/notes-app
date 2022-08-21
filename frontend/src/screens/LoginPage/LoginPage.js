@@ -5,6 +5,7 @@ import Loader from "../../components/Loader/Loader";
 import ShowError from "../../components/ShowError";
 import "./LoginPage.css";
 import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -12,8 +13,11 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
 
   const onChangeHandler = (e) => {
     const { value, name } = e.target;
@@ -24,28 +28,28 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Handlle-login");
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-      setLoading(true);
-      const { email, password } = formValues;
-      const { data: loginData } = await axios.post(
-        "/api/user/login",
-        { email, password },
-        config
-      );
-      console.log(loginData);
-      localStorage.setItem("notesUser", JSON.stringify(loginData));
-      setLoading(false);
-      history.push("/mynotes");
-    } catch (error) {
-      setLoading(false);
-      setError(error.response.data);
-    }
+    //   console.log("Handlle-login");
+    //   try {
+    //     const config = {
+    //       headers: {
+    //         "Content-type": "application/json",
+    //       },
+    //     };
+    //     setLoading(true);
+    //     const { email, password } = formValues;
+    //     const { data: loginData } = await axios.post(
+    //       "/api/user/login",
+    //       { email, password },
+    //       config
+    //     );
+    //     console.log(loginData);
+    //     localStorage.setItem("notesUser", JSON.stringify(loginData));
+    //     setLoading(false);
+    //     history.push("/mynotes");
+    //   } catch (error) {
+    //     setLoading(false);
+    //     setError(error.response.data);
+    //   }
   };
 
   return (
